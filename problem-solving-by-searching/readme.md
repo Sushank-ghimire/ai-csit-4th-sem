@@ -63,3 +63,40 @@ This diagram shows:
 - May go down a wrong path for a long time
 - Does not guarantee the shortest path
 - Can get stuck in deep or infinite branches without proper handling
+
+---
+
+## Breadth First Search (BFS)
+
+BFS explores all neighbors at the current depth before moving to nodes at the next depth level.
+
+### Key idea
+
+- Start from a node
+- Visit all direct neighbors first
+- Then visit their neighbors (level by level)
+- Stop when the goal is found
+
+The BFS flow is shown in:
+
+![BFS Architecture](arch/bfs.svg)
+
+This diagram shows:
+
+- the grid structure with obstacles
+- the breadth-first exploration pattern
+- the level-by-level expansion
+- the shortest path found by BFS
+
+### Advantages
+
+- Guarantees the shortest path in unweighted graphs
+- Explores systematically level by level
+- Good for finding nearest solutions
+- Works well with large state spaces
+
+### Disadvantages
+
+- Uses more memory than DFS (stores all nodes at current level)
+- Slower than DFS for deep search spaces
+- Not suitable for infinite or very deep graphs without proper pruning
