@@ -100,3 +100,39 @@ This diagram shows:
 - Uses more memory than DFS (stores all nodes at current level)
 - Slower than DFS for deep search spaces
 - Not suitable for infinite or very deep graphs without proper pruning
+
+## Uniform Cost Search
+
+Uniform Cost Search (UCS) expands the node with the lowest path cost first.
+
+### Key idea
+
+- Start from the initial node
+- Use a priority queue ordered by path cost
+- Expand the cheapest path available
+- Stop when the goal node is removed from the queue
+
+The UCS flow is shown in:
+
+![Uniform Cost Search Architecture](arch/uniform-cost.svg)
+
+This diagram shows:
+
+- the weighted graph
+- path costs between nodes
+- the lowest-cost route selection
+- the final least-cost path found by UCS
+
+### Advantages
+
+- Finds the least-cost path
+- Works well for weighted graphs
+- Guaranteed to be optimal if all edge costs are non-negative
+
+### Disadvantages
+
+- Slower than BFS in many cases
+- Uses more memory than DFS
+- Can explore many nodes when costs are similar
+
+---
