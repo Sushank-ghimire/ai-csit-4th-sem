@@ -136,3 +136,39 @@ This diagram shows:
 - Can explore many nodes when costs are similar
 
 ---
+
+## Greedy Best First Search
+
+Greedy Best First Search expands the node that appears closest to the goal according to a heuristic value.
+
+### Key idea
+
+- Start from the initial node
+- Use a priority queue ordered by heuristic value
+- Expand the most promising node first
+- Stop when the goal node is found
+
+The Greedy Best First Search flow is shown in:
+
+![Greedy Best First Search Architecture](arch/greedy_bfs.svg)
+
+This diagram shows:
+
+- the graph structure
+- heuristic-based node selection
+- the search path chosen by the algorithm
+- the final goal-reaching route
+
+### Advantages
+
+- Usually faster than uninformed search
+- Useful when a good heuristic is available
+- Often explores fewer nodes than BFS or DFS
+
+### Disadvantages
+
+- Does not guarantee the shortest path
+- Can make poor choices if the heuristic is misleading
+- May get stuck exploring suboptimal routes
+
+---
