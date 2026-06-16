@@ -172,3 +172,43 @@ This diagram shows:
 - May get stuck exploring suboptimal routes
 
 ---
+
+<a id="a-star-search"></a>
+
+## A\* Search
+
+A\* Search combines actual path cost and heuristic estimate to find the optimal path efficiently.
+
+### Key idea
+
+- Start from the initial node
+- Use a priority queue ordered by `f(n) = g(n) + h(n)`
+- `g(n)` = cost from start to current node
+- `h(n)` = estimated cost from current node to goal
+- Expand the node with the smallest `f(n)` first
+- Stop when the goal node is selected for expansion
+
+The A\* Search flow is shown in:
+
+![A* Search Architecture](arch/astar.svg)
+
+This diagram shows:
+
+- the weighted graph structure
+- path cost accumulation (`g(n)`)
+- heuristic guidance (`h(n)`)
+- final least-cost path found by A\*
+
+### Advantages
+
+- Finds the optimal path when the heuristic is admissible
+- Usually explores fewer nodes than UCS
+- Works well for weighted pathfinding problems
+
+### Disadvantages
+
+- Performance depends on heuristic quality
+- Uses more memory due to priority queue and bookkeeping
+- Can behave like UCS if heuristic gives little guidance
+
+---
