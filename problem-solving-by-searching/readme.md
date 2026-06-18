@@ -217,3 +217,40 @@ This diagram shows:
 - Can behave like UCS if heuristic gives little guidance
 
 ---
+
+## Hill Climbing
+
+Hill Climbing is a local search algorithm that repeatedly moves to a better neighboring state until no improvement is possible.
+
+### Key idea
+
+- Start from an initial state
+- Generate neighboring states
+- Evaluate each neighbor using an objective function
+- Move to the best neighbor if it improves the current state
+- Stop when no better neighbor is found
+
+The Hill Climbing flow is shown in:
+
+![Hill Climbing Architecture](arch/hill.svg)
+
+This diagram shows:
+
+- the current state
+- neighboring states
+- the improvement direction
+- the local optimum where the search stops
+
+### Advantages
+
+- Simple and easy to implement
+- Uses little memory
+- Can converge quickly for smooth search spaces
+
+### Disadvantages
+
+- Can get stuck in local optima
+- May stop at plateaus or ridges
+- Does not guarantee a global optimum
+
+---
