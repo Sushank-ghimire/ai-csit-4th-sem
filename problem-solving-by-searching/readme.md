@@ -9,11 +9,16 @@ A small collection of search algorithms used in AI problem solving.
 1. [Depth First Search (DFS)](#depth-first-search-dfs)
 2. [Breadth First Search (BFS)](#breadth-first-search-bfs)
 3. [Uniform Cost Search](#uniform-cost-search)
+4. [Depth Limited Search](#depth-limited-search)
+5. [Iterative Deepening Search](#iterative-deepening-search)
+6. [Bidirectional Search](#bidirectional-search)
 
 ### Heuristic Search (Informed Search)
 
 1. [Greedy Best First Search](#greedy-best-first-search)
 2. [A\* Search](#a-star-search)
+3. [Hill Climbing](#hill-climbing)
+4. [Simulated Annealing](#simulated-annealing)
 
 ---
 
