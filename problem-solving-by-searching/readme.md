@@ -254,3 +254,42 @@ This diagram shows:
 - Does not guarantee a global optimum
 
 ---
+
+## Simulated Annealing
+
+Simulated Annealing is a probabilistic local search algorithm that sometimes accepts worse moves to escape local optima.
+
+### Key idea
+
+- Start from an initial solution
+- Generate a neighboring solution
+- Evaluate the new solution
+- Accept better solutions immediately
+- Occasionally accept worse solutions based on temperature
+- Gradually lower the temperature over time
+
+The Simulated Annealing flow is shown in:
+
+![Simulated Annealing Architecture](arch/simulated.png)
+
+This diagram shows:
+
+- The improvement of the objective function over iterations.
+- The best score generally decreases as better solutions are discovered.
+- Large improvements usually occur in the early stages of the search.
+- Improvements become smaller as the algorithm converges.
+- The final score represents the best solution found by the simulated annealing algorithm.
+
+### Advantages
+
+- Helps escape local optima
+- Useful for complex search spaces
+- Often finds good near-optimal solutions
+
+### Disadvantages
+
+- Performance depends on temperature schedule
+- Can be slow to converge
+- Does not guarantee the global optimum
+
+---
