@@ -142,6 +142,42 @@ This diagram shows:
 
 ---
 
+## Depth Limited Search
+
+Depth Limited Search (DLS) is a depth first search variant with a fixed depth limit.
+
+### Key idea
+
+- Start from the initial node
+- Explore nodes depth-first
+- Stop expanding a branch when the depth limit is reached
+- Return success if the goal is found within the limit
+
+The Depth Limited Search flow is shown in:
+
+![Depth Limited Search Architecture](arch/depth.svg)
+
+This diagram shows:
+
+- the search tree structure
+- the depth-first exploration order
+- the cutoff at the depth limit
+- the path found within the allowed depth
+
+### Advantages
+
+- Uses less memory than breadth-first search
+- Prevents infinite descent in deep graphs
+- Useful when the solution depth is known or bounded
+
+### Disadvantages
+
+- May miss solutions deeper than the limit
+- Does not guarantee the shortest path
+- Choosing the wrong limit can make it incomplete
+
+---
+
 ## Greedy Best First Search
 
 Greedy Best First Search expands the node that appears closest to the goal according to a heuristic value.
