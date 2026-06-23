@@ -207,6 +207,33 @@ The Iterative Deepening Search flow is shown in:
 
 ---
 
+## Bidirectional Search
+
+Bidirectional Search runs two simultaneous searches—one forward from the start and one backward from the goal—stopping when the frontiers meet.
+
+### Key idea
+
+- Start two searches: one from the start and one from the goal
+- Expand nodes level-by-level from both sides
+- Stop when a node is discovered by both searches (meeting point)
+- Reconstruct the final path by joining the forward and backward paths
+
+![Bidirectional Search Architecture](arch/bidirectional.png)
+
+### Advantages
+
+- Often much faster than unidirectional BFS (search depth halved)
+- Reduces the number of expanded nodes for large unweighted graphs
+- Useful when both start and goal are known
+
+### Disadvantages
+
+- Requires the ability to search backward from the goal (reverse edges or symmetric graph)
+- Extra bookkeeping to detect and merge meeting points
+- Less effective or more complex for directed or weighted graphs
+
+---
+
 ## Greedy Best First Search
 
 Greedy Best First Search expands the node that appears closest to the goal according to a heuristic value.
@@ -358,3 +385,5 @@ This diagram shows:
 - Does not guarantee the global optimum
 
 ---
+
+[Go to top](#problem-solving-by-searching)
