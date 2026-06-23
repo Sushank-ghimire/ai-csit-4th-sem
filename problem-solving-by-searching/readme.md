@@ -178,6 +178,35 @@ This diagram shows:
 
 ---
 
+## Iterative Deepening Search
+
+Iterative Deepening Search (IDS) combines depth-first search and depth-limited search by increasing the depth limit step by step.
+
+### Key idea
+
+- Start with a depth limit of 0
+- Run depth-limited search
+- Increase the depth limit by 1 each time
+- Stop when the goal is found
+
+The Iterative Deepening Search flow is shown in:
+
+![Iterative Deepening Search Architecture](arch/deep.jpeg)
+
+### Advantages
+
+- Finds the shortest path in unweighted graphs
+- Uses less memory than BFS
+- Complete like BFS and memory-efficient like DFS
+
+### Disadvantages
+
+- Repeats work at smaller depths
+- Can be slower than BFS in some cases
+- Not ideal when depth is already known and small
+
+---
+
 ## Greedy Best First Search
 
 Greedy Best First Search expands the node that appears closest to the goal according to a heuristic value.
