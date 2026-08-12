@@ -1,3 +1,5 @@
+import math
+
 def alpha_beta(depth, node_index, maximizing_player, values, alpha, beta):
     if depth == 3:
         return values[node_index]
@@ -33,15 +35,46 @@ def alpha_beta(depth, node_index, maximizing_player, values, alpha, beta):
         return best
 
 
-values = [3, 5, 6, 9, 1, 2, 0, -1]
+# Check if n is power of 2
+n = int(input("Enter number of leaf nodes (power of 2): "))
 
-result = alpha_beta(
-    depth=0,
+if n<= 0 or (n & (n-1)) != 0:
+  print("Error: number of leaf nodes must be a power of 2")
+  exit()
+
+print(f"Enter {n} leaf node values: ")
+values = []
+
+for i in range(n):
+  value = int(input(f"Leaf Node {i+1}: "))
+  values.append(value)
+
+player = input("Enter starting player (MAX/MIN): ").strip().upper()
+
+max_depth = int(math.log2(n))
+
+if player == "MAX":
+  result = alpha_beta(
+    depth=max_depth,
     node_index=0,
     maximizing_player=True,
     values=values,
     alpha=float("-inf"),
-    beta=float("inf"),
-)
+    beta=float("inf")
+  )
 
+elif player == "MIN":
+  result = alpha_beta(
+    depth=max_depth,
+    node_index=0,
+    maximizing_player=True,
+    values=values,
+    alpha=float("-inf"),
+    beta=float("inf")
+  )
+else:
+  print("Invalid player! Enter MAX or MIN.")
+  exit()
+
+print("\nLeaf Nodes:", values)
 print("Optimal value:", result)
