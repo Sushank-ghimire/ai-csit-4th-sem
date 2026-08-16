@@ -94,14 +94,12 @@ region_map = {
     "M": 3,
 }
 
-for key in graph.keys():
-    print(f"{key}: {graph[key]}")
-
+print(*graph.items(), sep="\n")
 
 start_node = str(input("Enter start node: ")).upper()
 goal_node = str(input("Enter goal node: ")).upper()
 
-if start_node not in graph.keys() or goal_node not in graph.keys():
+if start_node not in graph or goal_node not in graph:
     print("Invalid node")
 else:
     result_path = greedy_bfs(graph, start_node, goal_node, heuristic, region_map)

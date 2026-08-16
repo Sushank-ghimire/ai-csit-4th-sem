@@ -53,21 +53,11 @@ player = input("Enter starting player (MAX/MIN): ").strip().upper()
 
 max_depth = int(math.log2(n))
 
-if player == "MAX":
+if player == "MAX" or player == "MIN":
   result = alpha_beta(
     depth=max_depth,
     node_index=0,
-    maximizing_player=True,
-    values=values,
-    alpha=float("-inf"),
-    beta=float("inf")
-  )
-
-elif player == "MIN":
-  result = alpha_beta(
-    depth=max_depth,
-    node_index=0,
-    maximizing_player=True,
+    maximizing_player=player == "MAX",
     values=values,
     alpha=float("-inf"),
     beta=float("inf")
