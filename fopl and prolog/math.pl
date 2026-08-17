@@ -48,7 +48,7 @@ difference :-
   write(D).
 
 
-% Difference
+% Divide
 divide :-
   write('Enter first number: '),
   read(A),
